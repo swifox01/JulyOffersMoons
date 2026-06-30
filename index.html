@@ -1,1 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>⚡ JulyOffersMoons · HOT DEALS 🔥</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1a0b2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .offer-card {
+            background: rgba(25, 15, 45, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 2.5rem;
+            border: 1px solid rgba(180, 130, 255, 0.5);
+            padding: 2.2rem 2rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(170, 120, 255, 0.3) inset, 0 0 40px rgba(138, 43, 226, 0.3);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #c77dff, #ff6b9d, #ffd166);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.3rem;
+        }
+        h1 i { background: none; font-size: 2.2rem; color: #e0aaff; filter: drop-shadow(0 0 8px #c77dff); -webkit-text-fill-color: #e0aaff; }
+        .sub-head {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #d4b8ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px dashed rgba(180, 130, 255, 0.5);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .popup-settings-wrapper { text-align: center; margin-bottom: 1rem; }
+        .popup-settings-btn {
+            background: linear-gradient(135deg, #ff9800, #f44336);
+            border: none;
+            border-radius: 40px;
+            padding: 12px 28px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .popup-settings-btn:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 152, 0, 0.8); }
+        .popup-note { display: block; color: #ffcc80; font-size: 0.8rem; margin-top: 6px; }
+        .settings-panel {
+            background: rgba(40, 20, 70, 0.5);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid #b47aff44;
+        }
+        .settings-panel label { color: #e0aaff; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+        .settings-panel input {
+            width: 70px;
+            padding: 8px 12px;
+            border-radius: 30px;
+            border: 2px solid #c77dff;
+            background: #1a0b2e;
+            color: #ffd166;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+        }
+        .settings-panel input:focus { border-color: #ffd166; box-shadow: 0 0 12px #ffd16655; }
+        .save-btn {
+            background: linear-gradient(135deg, #06d6a0, #0d5240);
+            border: none;
+            border-radius: 30px;
+            padding: 8px 18px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .save-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #06d6a0; }
+        .auto-click-wrapper { text-align: center; margin-bottom: 1.5rem; }
+        .auto-click-btn {
+            background: linear-gradient(135deg, #ff6b9d, #c77dff);
+            border: none;
+            border-radius: 60px;
+            padding: 1rem 2.5rem;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255, 107, 157, 0.6);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .auto-click-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 107, 157, 0.9); }
+        .auto-click-btn:disabled { background: #555; cursor: not-allowed; box-shadow: none; opacity: 0.6; }
+        .auto-status { display: block; margin-top: 10px; color: #ffd166; font-weight: 600; font-size: 0.95rem; min-height: 22px; }
+        .click-dashboard {
+            background: rgba(40, 20, 70, 0.6);
+            border-radius: 60px;
+            padding: 0.8rem 2rem;
+            margin-bottom: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            border: 1px solid #b47aff66;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(180, 122, 255, 0.2);
+        }
+        .total-clicks { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.3rem; color: #f0e2ff; }
+        .total-clicks i { font-size: 2rem; color: #ffb3c6; filter: drop-shadow(0 0 6px #ff6b9d); }
+        .click-badge {
+            background: #1a0b2ecc;
+            backdrop-filter: blur(4px);
+            padding: 8px 28px;
+            border-radius: 50px;
+            border: 1px solid #ffd166;
+            box-shadow: 0 0 15px #ffd16633;
+        }
+        .click-badge span { font-weight: 800; font-size: 2.2rem; color: #ffd166; margin-left: 10px; letter-spacing: 1px; }
+        .legend { display: flex; gap: 20px; font-size: 0.9rem; font-weight: 500; }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-dot { width: 16px; height: 16px; border-radius: 20px; background: #9d4edd; box-shadow: 0 0 8px #c77dff; }
+        .legend-dot.used { background: #06d6a0; box-shadow: 0 0 12px #06d6a0; }
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+        .offer-btn {
+            background: linear-gradient(135deg, #3c1e6b, #2a1548);
+            border: none;
+            border-radius: 60px;
+            padding: 0.85rem 0.6rem;
+            color: #f5edff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 1.5px #7b2cbf inset;
+            width: 100%;
+            text-decoration: none;
+            position: relative;
+            border: 1px solid #9d4edd55;
+        }
+        .offer-btn i { font-size: 1.2rem; color: #ffb3c6; }
+        .click-counter {
+            background: #1a0b2e;
+            border-radius: 40px;
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #ffd166;
+            border: 1px solid #ffb347;
+            margin-left: 4px;
+        }
+        .offer-btn.clicked { background: linear-gradient(135deg, #0d5240, #073b2e); border: 1.5px solid #06d6a0; box-shadow: 0 0 18px #06d6a0, 0 0 0 1.5px #ffd166 inset; }
+        .offer-btn.clicked i { color: #ffea9f; }
+        .offer-btn.clicked .click-counter { background: #0a3328; color: #ffeaa6; border-color: #ffd966; }
+        .offer-btn:hover { transform: translateY(-4px) scale(1.03); background: linear-gradient(135deg, #5a2ca0, #3c1e6b); box-shadow: 0 18px 28px -8px black, 0 0 0 2.5px #e0aaff inset; }
+        .section-label { font-size: 1.15rem; margin: 18px 0 8px; color: #e0aaff; display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        .section-label i { color: #ffb3c6; }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #cbb2ff;
+            border-top: 1px solid #b47aff66;
+            padding-top: 1.4rem;
+            font-size: 0.9rem;
+        }
+        .reset-link {
+            background: none;
+            border: 1.5px solid #e0aaff;
+            padding: 8px 22px;
+            border-radius: 50px;
+            color: #f0d6ff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        .reset-link:hover { background: #b47aff30; border-color: #ffd166; color: #ffeaaf; }
+        @media (max-width: 700px) {
+            .offer-card { padding: 1.5rem 1.2rem; }
+            h1 { font-size: 2rem; }
+            .click-dashboard { flex-direction: column; align-items: stretch; border-radius: 40px; padding: 1.2rem; }
+            .btn-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+            .offer-btn { padding: 0.7rem 0.5rem; font-size: 0.8rem; }
+            .auto-click-btn { font-size: 1rem; padding: 0.8rem 1.8rem; }
+            .settings-panel { flex-direction: column; gap: 10px; }
+            .popup-settings-btn { font-size: 0.9rem; padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="offer-card">
+    <h1><i class="fas fa-crown"></i> JulyOffersMoons DEAL ZONE <i class="fas fa-bolt"></i></h1>
+    <div class="sub-head"><i class="fas fa-fire-flame-curved"></i> 50 PREMIUM OFFERS · ALL ACTIVE <i class="fas fa-gem"></i></div>
 
+    <!-- POPUP SETTINGS BUTTON -->
+    <div class="popup-settings-wrapper">
+        <button class="popup-settings-btn" onclick="openPopupSettings()"><i class="fas fa-cog"></i> ⚠️ ALLOW POPUPS FIRST (OPEN SETTINGS)</button>
+        <span class="popup-note">Click → Copy URL → Open new tab → Paste → Allow → Then START</span>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div class="settings-panel">
+        <label for="roundInput">🔄 ROUNDS:</label>
+        <input type="number" id="roundInput" value="3" min="1" max="100" onchange="saveRoundSetting()">
+        <button class="save-btn" onclick="saveRoundSetting()">💾 SAVE</button>
+        <span style="color:#06d6a0;font-size:0.85rem;" id="saveConfirm"></span>
+    </div>
+
+    <!-- AUTO CLICK BUTTON -->
+    <div class="auto-click-wrapper">
+        <button class="auto-click-btn" id="autoClickBtn" onclick="startAutoClick()">🚀 START AUTO CLICK</button>
+        <div class="auto-status" id="autoStatus">Ready · <span id="roundDisplay">3</span> round(s)</div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="click-dashboard">
+        <div class="total-clicks"><i class="fas fa-chart-pie"></i><span>🔥 TOTAL CLAIMS</span></div>
+        <div class="click-badge"><i class="fas fa-fingerprint"></i> <span id="globalCounter">0</span></div>
+        <div class="legend"><div class="legend-item"><span class="legend-dot"></span> available</div><div class="legend-item"><span class="legend-dot used"></span> claimed</div></div>
+    </div>
+
+    <!-- ALL 50 OFFERS -->
+    <div class="section-label"><i class="fas fa-star"></i> 🔥 HOT PREMIUM DEALS 🔥 <i class="fas fa-star"></i></div>
+    <div class="btn-grid" id="offerGrid">
+        <!-- 1 -->
+        <a href="https://socialconventcontext.com/pfs0wmzs8?key=fdf036dcf195571d2ad8c134e740fad4" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_1" bn="1"><i class="fas fa-bolt"></i> LUNAR OFFER 1 <span class="click-counter" id="count_1">0</span></a>
+        <!-- 2 -->
+        <a href="https://socialconventcontext.com/pgb3awn5?key=45ef8ded5d8e1afe3e0e0a70e25f1d53" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_2" bn="2"><i class="fas fa-rocket"></i> MOON ROCKET <span class="click-counter" id="count_2">0</span></a>
+        <!-- 3 -->
+        <a href="https://socialconventcontext.com/zh5duc66?key=3df0481fbabda80146d388a5b8558a13" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_3" bn="3"><i class="fas fa-gift"></i> STAR GIFT <span class="click-counter" id="count_3">0</span></a>
+        <!-- 4 -->
+        <a href="https://socialconventcontext.com/ekwrq81cja?key=dc1f295e968e404e3cf30073cdb98006" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_4" bn="4"><i class="fas fa-star"></i> ECLIPSE PRIZE <span class="click-counter" id="count_4">0</span></a>
+        <!-- 5 -->
+        <a href="https://socialconventcontext.com/tiu1nsh9b?key=4d815bc660d5f718ff832751143503dc" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_5" bn="5"><i class="fas fa-fire"></i> COSMIC SALE <span class="click-counter" id="count_5">0</span></a>
+        <!-- 6 -->
+        <a href="https://socialconventcontext.com/zb2p2qp1pq?key=4050cbfcaf022ae40ddfe5f4a6aa8771" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_6" bn="6"><i class="fas fa-umbrella-beach"></i> NEBULA VIBE <span class="click-counter" id="count_6">0</span></a>
+        <!-- 7 -->
+        <a href="https://socialconventcontext.com/zepxbpue?key=79b029e0d0e977811eefd88d7aac13b3" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_7" bn="7"><i class="fas fa-trophy"></i> ORBIT WIN <span class="click-counter" id="count_7">0</span></a>
+        <!-- 8 -->
+        <a href="https://socialconventcontext.com/vmq6dpw8f?key=3ef8b75d808f08e972ff1eaeabcde2af" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_8" bn="8"><i class="fas fa-wallet"></i> STELLAR CASH <span class="click-counter" id="count_8">0</span></a>
+        <!-- 9 -->
+        <a href="https://socialconventcontext.com/zik02m0a?key=a9361736ed954d29838d6edd49234ef9" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_9" bn="9"><i class="fas fa-gamepad"></i> ASTRO LOOT <span class="click-counter" id="count_9">0</span></a>
+        <!-- 10 -->
+        <a href="https://socialconventcontext.com/gm4n33jb?key=0f2e76d243474272d29daf7ccd9d03d7" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_10" bn="10"><i class="fas fa-pizza-slice"></i> GALACTIC FEAST <span class="click-counter" id="count_10">0</span></a>
+        <!-- 11 -->
+        <a href="https://socialconventcontext.com/p13ds6uj9?key=5c64f6c3986c8f6fff8ee9e1db1e88a8" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_11" bn="11"><i class="fas fa-plane"></i> VOYAGER BONUS <span class="click-counter" id="count_11">0</span></a>
+        <!-- 12 -->
+        <a href="https://socialconventcontext.com/s6zipwi6?key=aca7c5a7c2ca6fcce4682ac8b74ad49b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_12" bn="12"><i class="fas fa-fire-alt"></i> SOLAR FLARE <span class="click-counter" id="count_12">0</span></a>
+        <!-- 13 -->
+        <a href="https://socialconventcontext.com/k3pmnc3pgs?key=d32fa9e562993ab1e618d20619724664" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_13" bn="13"><i class="fas fa-magic"></i> METEOR MAGIC <span class="click-counter" id="count_13">0</span></a>
+        <!-- 14 -->
+        <a href="https://socialconventcontext.com/k5f5m0p3?key=e7fe75270e35d7e8371a856023daa6f5" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_14" bn="14"><i class="fas fa-magic"></i> COMET CHARM <span class="click-counter" id="count_14">0</span></a>
+        <!-- 15 -->
+        <a href="https://socialconventcontext.com/gz9bf5hpy8?key=e4170d846f94214ffcb9cff98edae172" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_15" bn="15"><i class="fas fa-gem"></i> QUASAR GEM <span class="click-counter" id="count_15">0</span></a>
+        <!-- 16 -->
+        <a href="https://socialconventcontext.com/igmfrwrr3j?key=a870ef04b5788574b53cc4ba36b45203" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_16" bn="16"><i class="fas fa-diamond"></i> PULSAR DIAMOND <span class="click-counter" id="count_16">0</span></a>
+        <!-- 17 -->
+        <a href="https://socialconventcontext.com/f9r76y904x?key=473f8ee727633bf415124c58f86e9af0" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_17" bn="17"><i class="fas fa-diamond"></i> WHITE DWARF <span class="click-counter" id="count_17">0</span></a>
+        <!-- 18 -->
+        <a href="https://socialconventcontext.com/i9zgi0je?key=a8f872ff0c8b78b20ea01ea6a5516029" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_18" bn="18"><i class="fas fa-gift"></i> MYSTERY MOON <span class="click-counter" id="count_18">0</span></a>
+        <!-- 19 -->
+        <a href="https://socialconventcontext.com/zd054dp2xw?key=27f6a4205c3c49eff80dd20389ebef6c" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_19" bn="19"><i class="fas fa-crown"></i> IMPERIAL STAR <span class="click-counter" id="count_19">0</span></a>
+        <!-- 20 -->
+        <a href="https://socialconventcontext.com/uw30y043em?key=d8f3a7483a1016ad2fb31b01dc786e60" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_20" bn="20"><i class="fas fa-crown"></i> REGAL NEBULA <span class="click-counter" id="count_20">0</span></a>
+        <!-- 21 -->
+        <a href="https://socialconventcontext.com/hvusfm4vcq?key=7a000b12f767d49aca98e7dc561bcf0a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_21" bn="21"><i class="fas fa-crown"></i> GALAXY VIP <span class="click-counter" id="count_21">0</span></a>
+        <!-- 22 -->
+        <a href="https://socialconventcontext.com/dj4ix9cyst?key=4500b94cc513594461093a061d387f9d" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_22" bn="22"><i class="fas fa-coffee"></i> COSMIC BREW <span class="click-counter" id="count_22">0</span></a>
+        <!-- 23 -->
+        <a href="https://socialconventcontext.com/u1k4pu4x?key=613281ca912ce65d587c9dc3c7f80ab5" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_23" bn="23"><i class="fas fa-car"></i> LIGHTSPEED CAR <span class="click-counter" id="count_23">0</span></a>
+        <!-- 24 -->
+        <a href="https://socialconventcontext.com/t8jxwzbm4?key=dfc539525822272f54d441cecd9e4faa" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_24" bn="24"><i class="fas fa-motorcycle"></i> NITRO BIKE <span class="click-counter" id="count_24">0</span></a>
+        <!-- 25 -->
+        <a href="https://socialconventcontext.com/gr1sb5qrsj?key=8964a92567770daba33236cdc2f178c3" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_25" bn="25"><i class="fas fa-home"></i> MOON BASE <span class="click-counter" id="count_25">0</span></a>
+        <!-- 26 -->
+        <a href="https://socialconventcontext.com/rwbhvxa6tg?key=c28fbe6d03b63638f1f413c65ea2f1cf" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_26" bn="26"><i class="fas fa-clock"></i> TIME WARP <span class="click-counter" id="count_26">0</span></a>
+        <!-- 27 -->
+        <a href="https://socialconventcontext.com/nzv3c1gtf6?key=1ae90aefc0daf77df33f86929da9d92e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_27" bn="27"><i class="fas fa-car-side"></i> PLASMA DRIVE <span class="click-counter" id="count_27">0</span></a>
+        <!-- 28 -->
+        <a href="https://socialconventcontext.com/sk82igsc0?key=b7bc2d660d3f7d9f2384d3a0e7c4a8a6" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_28" bn="28"><i class="fas fa-gem"></i> LUNAR GEM <span class="click-counter" id="count_28">0</span></a>
+        <!-- 29 -->
+        <a href="https://socialconventcontext.com/qywh13gxu?key=d449bfd9b456990cf383e2810fc5ee93" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_29" bn="29"><i class="fas fa-coins"></i> STARDUST COINS <span class="click-counter" id="count_29">0</span></a>
+        <!-- 30 -->
+        <a href="https://socialconventcontext.com/wzz0c9wtn?key=d4c6b90b84629e45cbc4cb4b75d10439" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_30" bn="30"><i class="fab fa-bitcoin"></i> MOONCOIN <span class="click-counter" id="count_30">0</span></a>
+        <!-- 31 -->
+        <a href="https://socialconventcontext.com/zpvx7wpe?key=7c25639f5d797f47b11472310aace46b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_31" bn="31"><i class="fas fa-home"></i> SPACE STATION <span class="click-counter" id="count_31">0</span></a>
+        <!-- 32 -->
+        <a href="https://socialconventcontext.com/aas322jv3z?key=ebdb34279fbb4e7832c76c787871b406" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_32" bn="32"><i class="fas fa-mug-hot"></i> ZERO G LATTE <span class="click-counter" id="count_32">0</span></a>
+        <!-- 33 -->
+        <a href="https://socialconventcontext.com/fwby4fj9g?key=9e3b176aa76200dd1ba68e6b6eb07c8a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_33" bn="33"><i class="fas fa-mug-hot"></i> ASTRO MOCHA <span class="click-counter" id="count_33">0</span></a>
+        <!-- 34 -->
+        <a href="https://socialconventcontext.com/ar8jq03w?key=c8e28f5f9e2ce64b6ad05918b5ce3319" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_34" bn="34"><i class="fas fa-car"></i> ROVER ELITE <span class="click-counter" id="count_34">0</span></a>
+        <!-- 35 -->
+        <a href="https://socialconventcontext.com/utmbinux?key=59b52fef556368d6742f595602f5de0a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_35" bn="35"><i class="fas fa-mug-hot"></i> MARTIAN CAFE <span class="click-counter" id="count_35">0</span></a>
+        <!-- 36 -->
+        <a href="https://socialconventcontext.com/u5cyq96t5?key=0715a337e77b95131fd9ce115d7b9c83" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_36" bn="36"><i class="fas fa-mobile-alt"></i> QUANTUM PHONE <span class="click-counter" id="count_36">0</span></a>
+        <!-- 37 -->
+        <a href="https://socialconventcontext.com/bh71zj2qi?key=adba9aa15ae3c469727ae6c57319b309" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_37" bn="37"><i class="fas fa-laptop"></i> HOLO LAPTOP <span class="click-counter" id="count_37">0</span></a>
+        <!-- 38 -->
+        <a href="https://socialconventcontext.com/v5vsdg17?key=341cab7bc2a9571bf8ae0ac5256287c8" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_38" bn="38"><i class="fas fa-headphones"></i> SONIC WAVES <span class="click-counter" id="count_38">0</span></a>
+        <!-- 39 -->
+        <a href="https://socialconventcontext.com/hug5w6u2p8?key=1caaa30210165b89eb11caf8dd93217e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_39" bn="39"><i class="fas fa-tv"></i> PLASMA TV <span class="click-counter" id="count_39">0</span></a>
+        <!-- 40 -->
+        <a href="https://socialconventcontext.com/f9ctne777h?key=2da53ecd2acfb6154c0540fd528f2768" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_40" bn="40"><i class="fas fa-gift"></i> FINAL BONUS <span class="click-counter" id="count_40">0</span></a>
+        <!-- 41 -->
+        <a href="https://socialconventcontext.com/m66yjxxxr?key=4db34c1f02f29a48adeeb67d365aeae8" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_41" bn="41"><i class="fas fa-star"></i> EXTRA STAR 1 <span class="click-counter" id="count_41">0</span></a>
+        <!-- 42 -->
+        <a href="https://socialconventcontext.com/kj0vk5g2e?key=cdddc42b9f14cc8961cd80e37f0f2d00" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_42" bn="42"><i class="fas fa-gem"></i> EXTRA GEM 2 <span class="click-counter" id="count_42">0</span></a>
+        <!-- 43 -->
+        <a href="https://socialconventcontext.com/washsbz1yf?key=1e2a8504f6f5f392275144ad50daebe3" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_43" bn="43"><i class="fas fa-rocket"></i> SUPER NOVA <span class="click-counter" id="count_43">0</span></a>
+        <!-- 44 -->
+        <a href="https://socialconventcontext.com/kj0vk5g2e?key=cdddc42b9f14cc8961cd80e37f0f2d00" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_44" bn="44"><i class="fas fa-bolt"></i> HYPER DRIVE <span class="click-counter" id="count_44">0</span></a>
+        <!-- 45 -->
+        <a href="https://socialconventcontext.com/w808p4rd?key=30f0b83ebaf6a228d2ef677a26e8aab4" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_45" bn="45"><i class="fas fa-globe"></i> TERRA FIRMA <span class="click-counter" id="count_45">0</span></a>
+        <!-- 46 -->
+        <a href="https://socialconventcontext.com/eh47523ye?key=15665bb940ad062b8c87d6be9cbbe300" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_46" bn="46"><i class="fas fa-satellite"></i> SAT RING <span class="click-counter" id="count_46">0</span></a>
+        <!-- 47 -->
+        <a href="https://socialconventcontext.com/zdxgs5m1fd?key=2597bccd3d7195dd077bed27d3350480" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_47" bn="47"><i class="fas fa-user-astronaut"></i> ASTRO DEAL <span class="click-counter" id="count_47">0</span></a>
+        <!-- 48 -->
+        <a href="https://socialconventcontext.com/dynz0xuu9?key=d7961ef4efd50f520a8f62e4b340be07" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_48" bn="48"><i class="fas fa-meteor"></i> METEORITE <span class="click-counter" id="count_48">0</span></a>
+        <!-- 49 -->
+        <a href="https://socialconventcontext.com/czi0uxvv?key=55201a65fa6f26e7d08584ea7f30dbf9" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_49" bn="49"><i class="fas fa-moon"></i> FULL MOON <span class="click-counter" id="count_49">0</span></a>
+        <!-- 50 -->
+        <a href="https://socialconventcontext.com/czi0uxvv?key=55201a65fa6f26e7d08584ea7f30dbf9" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_50" bn="50"><i class="fas fa-star"></i> CRESCENT BAY <span class="click-counter" id="count_50">0</span></a>
+    </div>
+
+    <div class="card-footer">
+        <span><i class="far fa-clock"></i> 50 active deals · instant access</span>
+        <div class="reset-link" onclick="resetAllCounters()"><i class="fas fa-arrows-rotate"></i> reset counters</div>
+    </div>
+</div>
+
+<script>
+    const btnsTotal = 50;
+    let cMap = {};
+    for (let i=1; i<=btnsTotal; i++) cMap['btn_'+i] = 0;
+    const STORE = 'mega_50_v1', RKEY = 'auto_rounds_v8';
+
+    function lCounts() { try { let s=localStorage.getItem(STORE); if(s) { let p=JSON.parse(s); for(let k in cMap) if(typeof p[k]==='number') cMap[k]=p[k]; } } catch(e){} }
+    function sCounts() { try { localStorage.setItem(STORE, JSON.stringify(cMap)); } catch(e){} }
+    function total() { return Object.values(cMap).reduce((a,b)=>a+b,0); }
+
+    function refresh() {
+        document.getElementById('globalCounter').innerText = total();
+        for (let i=1; i<=btnsTotal; i++) {
+            let cs = document.getElementById('count_'+i), b = document.getElementById('btn_'+i);
+            if (cs && b) { let v = cMap['btn_'+i]||0; cs.innerText = v; v>0 ? b.classList.add('clicked') : b.classList.remove('clicked'); }
+        }
+    }
+
+    function inc(id) { if(cMap.hasOwnProperty(id)) { cMap[id]++; refresh(); sCounts(); } }
+
+    function resetAllCounters() { for (let i=1; i<=btnsTotal; i++) cMap['btn_'+i] = 0; refresh(); sCounts(); }
+
+    function openPopupSettings() {
+        let a = window.open('about:blank', '_blank');
+        if(a){a.document.write(`<html><head><title>Allow Popups</title><style>body{font-family:sans-serif;background:#1a0b2e;color:#fff;text-align:center;padding:40px;line-height:1.8;}.steps{background:#2d1b4e;padding:25px;border-radius:15px;display:inline-block;text-align:left;margin:20px;}.highlight{color:#ffd166;font-weight:bold;}code{background:#000;padding:4px 10px;border-radius:6px;color:#ffd166;font-size:16px;}button{background:#ff6b9d;color:#fff;border:none;padding:12px 30px;border-radius:30px;font-size:16px;cursor:pointer;margin-top:15px;}</style></head><body><h1>🔓 Allow Popups</h1><div class="steps"><p>📋 <span class="highlight">Step 1:</span> Copy URL:</p><p><code>chrome://settings/content/popups</code></p><p>📌 <span class="highlight">Step 2:</span> Open new tab (Ctrl+T)</p><p>📎 <span class="highlight">Step 3:</span> Paste & Enter</p><p>🔍 <span class="highlight">Step 4:</span> Allow this site</p><p>🔄 <span class="highlight">Step 5:</span> Come back & START</p></div><button onclick="navigator.clipboard.writeText('chrome://settings/content/popups').then(function(){}).catch(function(){})">📋 COPY SETTINGS URL</button></body></html>`);a.document.close();}
+    }
+
+    function gRounds() { try { let s=localStorage.getItem(RKEY); return s ? parseInt(s) : 3; } catch(e){ return 3; } }
+    function saveRoundSetting() {
+        let inp = document.getElementById('roundInput'), cf = document.getElementById('saveConfirm');
+        let v = parseInt(inp.value); if(isNaN(v)||v<1) v=1; if(v>100) v=100;
+        inp.value = v; localStorage.setItem(RKEY, v);
+        document.getElementById('roundDisplay').innerText = v;
+        cf.innerText = '✅ Saved: '+v+' round(s)'; setTimeout(()=>cf.innerText='',2000);
+    }
+    function loadRounds() { let r = gRounds(); document.getElementById('roundInput').value = r; document.getElementById('roundDisplay').innerText = r; }
+
+    let running = false;
+    function startAutoClick() {
+        if(running){alert('⚠️ Already running!');return;}
+        let btns = document.querySelectorAll('.offer-btn');
+        if(!btns.length){alert('❌ No buttons!');return;}
+        let rds = gRounds(), all = btns.length * rds;
+        let st = document.getElementById('autoStatus'), sBtn = document.getElementById('autoClickBtn');
+        running = true; sBtn.disabled = true; sBtn.textContent = '⏳ CLICKING...';
+        let cur = 0, round = 1, idx = 0;
+        st.textContent = '🔄 Round 1/'+rds+' · 0/'+all;
+        let t = setInterval(() => {
+            if(round>rds){clearInterval(t);st.textContent='✅ DONE! '+all+' clicks ('+btns.length+'×'+rds+')';sBtn.disabled=false;sBtn.textContent='🚀 START AUTO CLICK';running=false;return;}
+            if(idx>=btns.length){round++;idx=0;if(round>rds)return;st.textContent='🔄 Round '+round+'/'+rds+' · '+cur+'/'+all;return;}
+            let b=btns[idx],bid=b.id,url=b.href||b.getAttribute('href');
+            if(url){let a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';document.body.appendChild(a);a.click();document.body.removeChild(a);cur++;if(bid&&cMap.hasOwnProperty(bid))inc(bid);st.textContent='🔄 R'+round+'/'+rds+' · #'+cur+'/'+all+' ✅';}
+            else{cur++;st.textContent='🔄 R'+round+'/'+rds+' · #'+cur+'/'+all+' ⚠️';}
+            idx++;
+        },2000);
+    }
+
+    for(let i=1;i<=btnsTotal;i++){let b=document.getElementById('btn_'+i);if(b)b.addEventListener('click',()=>inc('btn_'+i));}
+    lCounts();loadRounds();refresh();
+    console.log('✅ 50 btns | Rounds: '+gRounds());
+</script>
+</body>
+</html>
